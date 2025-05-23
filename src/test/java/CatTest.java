@@ -18,11 +18,11 @@ public class CatTest {
     @Rule
     public final ErrorCollector errorCollector = new ErrorCollector();
 
-    private Feline feline;
+    Cat cat;
 
     //Создание мок
     @Mock
-    Cat cat;
+    Feline feline;
 
     //Тест для звуков, издающих кошкой
     @Test
@@ -34,11 +34,12 @@ public class CatTest {
     
     //Тест для рациона котов
     @Test
-    public void catEatingTest () throws Exception {
-
+    public void catGetFoodTest () throws Exception {
+        cat = new Cat(feline);
         List<String> catFoods = List.of("Животные", "Птицы", "Рыба");
-        Mockito.when(cat.getFood()).thenReturn(catFoods);
+        Mockito.when(feline.eatMeat()).thenReturn(catFoods);
         assertEquals(catFoods, cat.getFood());
     }
 
+    
 }

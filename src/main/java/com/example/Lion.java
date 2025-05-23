@@ -2,12 +2,16 @@ package com.example;
 
 import java.util.List;
 
-public class Lion {
+public class Lion extends Feline {
 
     boolean hasMane;
-    private final Feline feline = new Feline(); //инкапсуляция в классe льва
+    private final Feline feline; 
 
-    public Lion(String sex) throws Exception {
+  
+    public Lion(String sex, Feline feline) throws Exception {
+
+        this.feline = feline;
+
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {

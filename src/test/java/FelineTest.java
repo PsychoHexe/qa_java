@@ -9,22 +9,22 @@ import com.example.Feline;
 public class FelineTest {
 
     Feline feline = new Feline();
-    List<String> foods1 = List.of("Животные", "Птицы", "Рыба");
-    List<String> foods2 = List.of("Трава", "Различные растения");
+    List<String> foods_pred = List.of("Животные", "Птицы", "Рыба");
+    List<String> foods_her = List.of("Трава", "Различные растения");
     int kittensCount = 7;
 
     //Тест для метода по рациону мясной еды
     @Test
     public void eatMeatTest() throws Exception {
 
-        assertEquals(foods1, feline.eatMeat());
+        assertEquals(foods_pred, feline.eatMeat());
     }
 
     //Тест для метода по рациону веганской еды
     @Test
     public void eatNotMeatTest() throws Exception {
 
-        assertEquals(foods2, feline.getFood("Травоядное"));
+        assertEquals(foods_her, feline.getFood("Травоядное"));
     }
 
     //Тест для метода по семейству
@@ -36,13 +36,13 @@ public class FelineTest {
 
     //Тест для метода с 1 котенком
     @Test
-    public void oneKitten() {
+    public void oneKittenTest() {
         assertEquals(1, feline.getKittens());
     }
 
     //Тест для метода с кол-вом котят больше 1
     @Test
-    public void kittens() {
+    public void kittensTest() {
         assertEquals(kittensCount, feline.getKittens(7));
     }
 
